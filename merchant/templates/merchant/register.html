@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tinker-Registration</title>
+  </head>
+  <body>
+    <h1>Register with Martbell</h1>
+    {% if registered %}
+    <strong>Thank you for registering with us.</strong>
+    {% else %}
+    <i>Register by filling the form below</i>
+    <form id="merchant_form" method="post" action="/merchant/register">
+      {% cref token %}
+      {{merchant_form.as_p}}
+      {{merchant_profile_form.as_p}}
+      <input type="submit" name="submmit" value="Register" />
+    </form>
+    {% endif %}
+  </body>
+</html>
